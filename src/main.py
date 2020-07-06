@@ -37,6 +37,8 @@ with app.app_context():
 app.register_blueprint(author_routes, url_prefix='/api/authors')
 app.register_blueprint(book_routes, url_prefix='/api/books')
 app.register_blueprint(user_routes, url_prefix='/api/users')
+
+#adds global responses in error situations
 @app.after_request
 def add_header(response):
     return response
